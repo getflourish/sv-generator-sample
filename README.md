@@ -90,6 +90,7 @@ Mit der App «Kurzbefehle» lässt sich die Webseite mit einem Klick generieren.
 Der Code für Schritt (2):
 ```
 cd /path/to/sv-generator-sample && python3 sv.py && cd /path/to/sv-generator-sample/dist && open .
+```
 
 <img width="1090" alt="Bildschirmfoto 2022-02-08 um 07 42 51" src="https://user-images.githubusercontent.com/183989/152932679-eb669d15-4317-453a-9d95-f077dec41e9a.png">
 
