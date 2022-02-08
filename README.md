@@ -79,6 +79,25 @@ Im HTML Template finden wir PLatzhalter `#title`, `#navigation` und `#content`. 
 
 -> Es wird eine Webseite generiert, die wir unter `dist/index.html` öffnen können.
 
+## macOS: Kurzbefehl
+
+Mit der App «Kurzbefehle» lässt sich die Webseite mit einem Klick generieren.
+
+1. Ordner von Schnellaktion erhalten
+2. «Shell Skript ausführen»
+3. Mitteilung anzeigen
+
+Der Code für Schritt (2):
+```
+cd /path/to/sv-generator-sample && python3 sv.py && cd /path/to/sv-generator-sample/dist && open .
+
+<img width="1090" alt="Bildschirmfoto 2022-02-08 um 07 42 51" src="https://user-images.githubusercontent.com/183989/152932679-eb669d15-4317-453a-9d95-f077dec41e9a.png">
+
+<img width="316" alt="Bildschirmfoto 2022-02-08 um 07 44 28" src="https://user-images.githubusercontent.com/183989/152932791-9fa374dc-e71d-4a62-926b-67594e96b1a7.png">
+
+<img width="368" alt="Bildschirmfoto 2022-02-08 um 07 42 56" src="https://user-images.githubusercontent.com/183989/152932692-80cb637c-17ec-4e11-b68d-3f08a25ac549.png">
+
+
 ## Hosting (unvollständig)
 
 Um die Webseite für andere zugänglich zu machen, müssen wir sie nun hosten. Dies können wir über einen FTP-Server machen (z.B. https://hostpoint.ch) oder indem wir einen Service benutzen mit dem sich ein Ordner via Terminal ins Internet pushen lässt.
