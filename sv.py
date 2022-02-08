@@ -25,6 +25,9 @@
 # pathlib requires Python > 3.4
 from pathlib import Path
 
+# Regex
+import re
+
 # pip install markdown
 import markdown
 
@@ -72,12 +75,28 @@ def getTemplate(path):
 # This function also replaces #content with the page content and #navigation with
 # the generated navigation.
 def convertMarkdownFileToHTML(file, template, navigation):
+
+   # read document text
+  documentText = file.read_text()
+
   # convert
-  html = markdown.markdown(file.read_text())
+  html = markdown.markdown(documentText)
+
+  # dummy title and search pattern
+  documentTitle = "Untitled"
+  headingPattern = "^#+ ?(.*)"
+  # nicht so toll: es gibt auch noch die Unterstreichungs-Syntax "==="
+  # da müsste mit look-ahead die folgezeile geprüft werden?
+ 
+  # find document title if exists
+  if (re.search(headingPattern, documentText)):
+    headingMatch = re.match(headingPattern, documentText).group(0)
+    documentTitle = re.sub("#+ ?(.*)", r'\1', headingMatch)
 
   # replace placeholders
   withContent = template.replace("#content", html)
-  withContentAndNavigation = withContent.replace("#navigation", navigation)
+  withContentAndTitle = withContent.replace("#title", documentTitle)
+  withContentAndNavigation = withContentAndTitle.replace("#navigation", navigation)
 
   return withContentAndNavigation
 
